@@ -58,18 +58,15 @@ $(function(){
             var newNoteContent = $('#new-note-content');
 			var clearAll = $('#clear');
             newNoteForm.submit(function(e){
-				if(newNoteContent.val()) {
-					octopus.addNewNote(newNoteContent.val());
-					newNoteContent.val('');
-					e.preventDefault();
-				};
-                $('#deleteOne').each(function(index) {
-                    let currentTarget = $(this);
-                    $(this).click(function(event) {
-                        currentTarget.parent().remove();
-                        octopus.deleteOne(index);
+			if(newNoteContent.val()) {
+				octopus.addNewNote(newNoteContent.val());
+				newNoteContent.val('');
+				e.preventDefault();
+			};
+                    $('#deleteOne').click(function(event) {
+                        event.parent().remove();
+                        octopus.deleteOne(octopus.getNotes().length);
                     });
-                });
             });
 			clearAll.click(function(e) {
 				octopus.deleteAll();
