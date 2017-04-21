@@ -16,7 +16,10 @@ $(function(){
         },
 		clear: function() {
 			localStorage.notes = JSON.stringify([]);
-		}
+		},
+        deleteOne: function(index) {
+            localStorage.notes = JSON.stringify(this.getAllNotes().splice(index,1));
+        }
     };
 
 
@@ -41,8 +44,8 @@ $(function(){
 			model.clear();
 			view.render();
 		},
-        deleteOne: function(element) {
-            $(element).remove();
+        deleteOne: function(index) {
+            model.deleteOne(index);
             view.render();
         }
     };
@@ -60,8 +63,12 @@ $(function(){
 					newNoteContent.val('');
 					e.preventDefault();
 				};
-                $('#deleteOne').click(function(event) {
-                    $(event.currentTarget).parent().remove();
+                $('#deleteOne').each(function(index) {
+                    let currentTarget = $(this);
+                    $(this).click(function(event) {
+                        currentTarget.parent().remove();
+                        octopus.deleteOne(index);
+                    });
                 });
             });
 			clearAll.click(function(e) {
