@@ -1,6 +1,8 @@
 # electron-project
+
 Desktop application that takes notes you create
-#How to use
-Git clone
-npm install
-npm start
+
+# How to use
+- Git clone down repo
+- npm install
+- npm start
