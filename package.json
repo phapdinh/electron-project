@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "jshint main.js && csslint css/retain.css",
+    "test": "jshint main.js & csslint css/retain.css",
     "start": "electron ."
   },
   "author": "",
