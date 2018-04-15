@@ -4,15 +4,15 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "jshint main.js & csslint css/retain.css",
+    "test": "eslint . & csslint css/retain.css",
     "start": "electron ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "electron": "^1.6.5",
-    "jquery": "^3.2.1",
-    "jshint": "^2.9.5"
+    "eslint": "^4.19.1",
+    "jquery": "^3.2.1"
   },
   "devDependencies": {
     "csslint": "^1.0.5"
