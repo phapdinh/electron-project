@@ -59,21 +59,21 @@ $(function(){
             var newNoteContent = $('#new-note-content');
 			var clearAll = $('#clear');
             newNoteForm.submit(function(e){
-			if(newNoteContent.val()) {
-				octopus.addNewNote(newNoteContent.val());
-				newNoteContent.val('');
-				e.preventDefault();
-			};
-                    $('#deleteOne').click(function(event) {
-                        event.parent().remove();
-                        octopus.deleteOne(octopus.getNotes().length);
-                    });
-            });
+			     if(newNoteContent.val()) {
+				    octopus.addNewNote(newNoteContent.val());
+				    newNoteContent.val('');
+				    e.preventDefault();
+			     }
+                $('#deleteOne').click(function(event) {
+                    event.parent().remove();
+                    octopus.deleteOne(octopus.getNotes().length);
+                })
+            })
 			clearAll.click(function(e) {
 				octopus.deleteAll();
 				e.preventDefault();
-			});
-            view.render();
+			})
+            view.render()
         },
         render: function(){
             var htmlStr = '';
