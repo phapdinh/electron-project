@@ -59,11 +59,11 @@ $(function(){
             var newNoteContent = $('#new-note-content');
 			var clearAll = $('#clear');
             newNoteForm.submit(function(e){
-			     if(newNoteContent.val()) {
-				    octopus.addNewNote(newNoteContent.val());
-				    newNoteContent.val('');
-				    e.preventDefault();
-			     }
+                if(newNoteContent.val()) {
+                    octopus.addNewNote(newNoteContent.val());
+                    newNoteContent.val('');
+                    e.preventDefault();
+                }
                 $('#deleteOne').click(function(event) {
                     event.parent().remove();
                     octopus.deleteOne(octopus.getNotes().length);
@@ -78,11 +78,11 @@ $(function(){
         render: function(){
             var htmlStr = '';
             octopus.getNotes().forEach(function(note){
-                htmlStr += '<li class="note">'+
+                htmlStr += '<li class="note">' +
                         note.content +
                     '<br/>' +
-					'<em class="note-date">'+
-					  new Date(note.date) +
+					'<em class="note-date">' +
+				    (new Date(note.date)) +
 					'</em>'+
                     '<button id="deleteOne">' +
                     'delete' +
